@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20220822 10:21:06.126" rpa="false" schemaversion="2">
+<suite id="s1" name="TestCasesAPIBooks" source="C:\Automação\BooksAPI\TestCasesAPIBooks.robot">
+<kw name="Conectar a minha API" library="ResourceAPI" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>fakeAPI</arg>
+<arg>${URL_API}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220822 10:21:06.380" level="INFO">Creating Session using : alias=fakeAPI, url=https://fakerestapi.azurewebsites.net/api/v1/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220822 10:21:06.380" endtime="20220822 10:21:06.381"/>
+</kw>
+<status status="PASS" starttime="20220822 10:21:06.380" endtime="20220822 10:21:06.381"/>
+</kw>
+<test id="s1-t1" name="Cadastrar um novo livro (POST)">
+<kw name="Cadastrar um novo livro" library="ResourceAPI">
+<kw name="Get Current Date" library="DateTime">
+<var>${data}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220822 10:21:06.382" level="INFO">${data} = 2022-08-22 10:21:06.382</msg>
+<status status="PASS" starttime="20220822 10:21:06.382" endtime="20220822 10:21:06.382"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220822 10:21:06.385" level="INFO" html="true">Created file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.383" endtime="20220822 10:21:06.385"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>{\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.387" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.386" endtime="20220822 10:21:06.387"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>"id":2315,\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.388" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.387" endtime="20220822 10:21:06.388"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>"title":"TESTE'",\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.389" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.388" endtime="20220822 10:21:06.389"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>"description": "TESTE2",\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.390" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.390" endtime="20220822 10:21:06.391"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>"pageCount": 210,\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.392" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.391" endtime="20220822 10:21:06.392"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>"excerpt": "TEST",\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.393" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.392" endtime="20220822 10:21:06.393"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>"publishDate": "${data}"\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.394" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.393" endtime="20220822 10:21:06.394"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>C:\\automação\booksapi\\livro.json</arg>
+<arg>}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20220822 10:21:06.395" level="INFO" html="true">Appended to file '&lt;a href="file://C:\automaçãobooksapi\livro.json"&gt;C:\automaçãobooksapi\livro.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220822 10:21:06.394" endtime="20220822 10:21:06.395"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${livro}</var>
+<arg>C:\\automação\booksapi\livro.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220822 10:21:06.396" level="INFO" html="true">Getting file '&lt;a href="file://C:\automaçãobooksapilivro.json"&gt;C:\automaçãobooksapilivro.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220822 10:21:06.396" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\automaçãobooksapilivro.json'</msg>
+<status status="FAIL" starttime="20220822 10:21:06.395" endtime="20220822 10:21:06.397"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${HEADERS}</var>
+<arg>content-type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220822 10:21:06.397" endtime="20220822 10:21:06.397"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>fakeAPI</arg>
+<arg>Books</arg>
+<arg>data=${livro}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<status status="NOT RUN" starttime="20220822 10:21:06.397" endtime="20220822 10:21:06.397"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${RESPOSTA.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" starttime="20220822 10:21:06.397" endtime="20220822 10:21:06.397"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${RESPOSTA.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220822 10:21:06.397" endtime="20220822 10:21:06.397"/>
+</kw>
+<status status="FAIL" starttime="20220822 10:21:06.382" endtime="20220822 10:21:06.399"/>
+</kw>
+<kw name="Conferir o status code" library="ResourceAPI">
+<arg>200</arg>
+<status status="NOT RUN" starttime="20220822 10:21:06.400" endtime="20220822 10:21:06.400"/>
+</kw>
+<kw name="Conferir o reason" library="ResourceAPI">
+<arg>OK</arg>
+<status status="NOT RUN" starttime="20220822 10:21:06.400" endtime="20220822 10:21:06.400"/>
+</kw>
+<status status="FAIL" starttime="20220822 10:21:06.381" endtime="20220822 10:21:06.401">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\automaçãobooksapilivro.json'</status>
+</test>
+<test id="s1-t2" name="Buscar um livro específico (GET em um livro específico)">
+<kw name="Requisitar o livro &quot;2315&quot;" library="ResourceAPI" sourcename="Requisitar o livro &quot;${ID_LIVRO}&quot;">
+<kw name="Get Request" library="RequestsLibrary">
+<var>${RESPOSTA}</var>
+<arg>fakeAPI</arg>
+<arg>Books/${ID_LIVRO}</arg>
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<msg timestamp="20220822 10:21:07.469" level="INFO">GET Request : url=https://fakerestapi.azurewebsites.net/api/v1//Books/2315 
+ path_url=/api/v1//Books/2315 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220822 10:21:07.469" level="INFO">GET Response : url=https://fakerestapi.azurewebsites.net/api/v1//Books/2315 
+ status=404, reason=Not Found 
+ body={"type":"https://tools.ietf.org/html/rfc7231#section-6.5.4","title":"Not Found","status":404,"traceId":"00-1f58f2d3e2ede54f9297aa6d8752a85a-bd19cdadef156d41-00"} 
+ </msg>
+<msg timestamp="20220822 10:21:07.469" level="INFO">C:\Users\alessandra.dias\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakerestapi.azurewebsites.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220822 10:21:07.470" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220822 10:21:06.403" endtime="20220822 10:21:07.470"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${RESPOSTA.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220822 10:21:07.470" endtime="20220822 10:21:07.472"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${RESPOSTA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220822 10:21:07.473" level="INFO">${RESPOSTA} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220822 10:21:07.472" endtime="20220822 10:21:07.473"/>
+</kw>
+<status status="PASS" starttime="20220822 10:21:06.403" endtime="20220822 10:21:07.473"/>
+</kw>
+<kw name="Conferir o status code" library="ResourceAPI">
+<arg>200</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${RESPOSTA.status_code}</arg>
+<arg>${STATUSCODE_DESEJADO}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220822 10:21:07.475" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20220822 10:21:07.475" level="FAIL">404 != 200</msg>
+<status status="FAIL" starttime="20220822 10:21:07.474" endtime="20220822 10:21:07.476"/>
+</kw>
+<status status="FAIL" starttime="20220822 10:21:07.473" endtime="20220822 10:21:07.476"/>
+</kw>
+<kw name="Conferir o reason" library="ResourceAPI">
+<arg>OK</arg>
+<status status="NOT RUN" starttime="20220822 10:21:07.477" endtime="20220822 10:21:07.477"/>
+</kw>
+<status status="FAIL" starttime="20220822 10:21:06.402" endtime="20220822 10:21:07.478">404 != 200</status>
+</test>
+<doc>Documentação da API: https://fakerestapi.azurewebsites.net/index.html</doc>
+<status status="FAIL" starttime="20220822 10:21:06.128" endtime="20220822 10:21:07.480"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="TestCasesAPIBooks">TestCasesAPIBooks</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
